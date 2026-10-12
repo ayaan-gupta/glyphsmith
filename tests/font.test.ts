@@ -51,13 +51,19 @@ describe('outlining', () => {
   it('thins a tapered stroke toward its ends and keeps its body', () => {
     const stroke: Stroke = [{ x: 100, y: 0 }, { x: 100, y: 600 }]
     const c = outlineStrokes([stroke], 60, 'tapered')[0]!
+    // Width of the outline where a horizontal line at height y cuts it. The
+    // straight middle of the stem has no vertices, so points cannot be used.
     const widthNear = (y: number) => {
-      const xs = c.filter((p) => Math.abs(p.y - y) < 40).map((p) => p.x)
+      const xs: number[] = []
+      c.forEach((p, i) => {
+        const q = c[(i + 1) % c.length]!
+        if ((p.y - y) * (q.y - y) < 0) xs.push(p.x + ((y - p.y) / (q.y - p.y)) * (q.x - p.x))
+      })
       return Math.max(...xs) - Math.min(...xs)
     }
     // Regression: a two-point stem used to come out thin along its whole length.
     expect(widthNear(300)).toBeGreaterThan(54)
-    expect(widthNear(300)).toBeGreaterThan(widthNear(0) * 1.5)
+    expect(widthNear(300)).toBeGreaterThan(widthNear(4) * 1.5)
   })
 
   it('gives a closed loop an outer contour and a hole, wound opposite ways', () => {
