@@ -318,8 +318,9 @@ export function App() {
       </section>
 
       <footer>
-        The skeleton alphabet is Hershey Roman Simplex, drawn for pen plotters by Dr. A. V. Hershey at
-        the U.S. National Bureau of Standards in 1967. Everything else happens in your browser.
+        The skeleton alphabet is Hershey Roman Simplex. The Hershey Fonts were originally created by
+        Dr. A. V. Hershey while working at the U.S. National Bureau of Standards. Everything else
+        happens in your browser.
       </footer>
     </div>
   )

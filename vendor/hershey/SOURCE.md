@@ -1,8 +1,10 @@
 # Hershey Roman Simplex
 
 `futural.jhf` is the Hershey Roman Simplex font, a single-line (centreline)
-typeface digitised by Dr. A. V. Hershey at the U.S. National Bureau of
-Standards in 1967, in the JHF text format devised by James Hurt.
+typeface. The Hershey Fonts were originally created by Dr. A. V. Hershey while
+working at the U.S. National Bureau of Standards. The format of the font data
+in this distribution was originally created by James Hurt, Cognition, Inc.,
+900 Technology Park Drive, Billerica, MA 01821.
 
 Fetched unmodified from
 https://github.com/kamalmostafa/hershey-fonts/blob/master/hershey-fonts/futural.jhf
