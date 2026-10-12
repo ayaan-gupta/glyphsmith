@@ -21,6 +21,8 @@ declare module 'gifenc' {
   export function GIFEncoder(): Encoder
   export function quantize(rgba: Uint8Array | Uint8ClampedArray, maxColors: number, options?: { format?: string }): Palette
   export function applyPalette(rgba: Uint8Array | Uint8ClampedArray, palette: Palette, format?: string): Uint8Array
+  const gifenc: { GIFEncoder: typeof GIFEncoder; quantize: typeof quantize; applyPalette: typeof applyPalette }
+  export default gifenc
 }
 
 declare module 'opentype.js' {
